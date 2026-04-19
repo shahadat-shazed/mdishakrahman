@@ -58,4 +58,15 @@ document.addEventListener('DOMContentLoaded', () => {
             navbar.style.boxShadow = 'none';
         }
     });
+
+    // Mouse Cursor Glow
+    const cursorGlow = document.querySelector('.cursor-glow');
+    if (cursorGlow) {
+        document.addEventListener('mousemove', (e) => {
+            requestAnimationFrame(() => {
+                cursorGlow.style.left = e.clientX + 'px';
+                cursorGlow.style.top = e.clientY + 'px';
+            });
+        });
+    }
 });

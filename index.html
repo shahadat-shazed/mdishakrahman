@@ -13,9 +13,58 @@
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=4">
+    <style>
+        /* INLINE CSS FOR BACKGROUND GRADIENT TO BYPASS CACHE */
+        body {
+            background-color: #030712 !important;
+            background-image: radial-gradient(circle at 80% 20%, rgba(30, 41, 59, 0.6) 0%, #030712 60%) !important;
+        }
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 9999;
+        }
+        .services, .skills, .pricing, .experience, .awards, .tools-grid, .footer {
+            background: transparent !important;
+        }
+        .cursor-glow {
+            position: fixed;
+            top: 50%; left: 50%;
+            width: 450px; height: 450px;
+            background: radial-gradient(circle, rgba(20, 184, 166, 0.12) 0%, transparent 60%);
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            transition: transform 0.1s ease-out;
+        }
+        .theme-grid-bg {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            pointer-events: none;
+            z-index: -2;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 56px 56px;
+            mask-image: radial-gradient(circle at top right, black 40%, transparent 90%);
+            -webkit-mask-image: radial-gradient(circle at top right, black 40%, transparent 90%);
+        }
+    </style>
 </head>
 <body>
+
+    <!-- Ambient Gradient Orbs -->
+    <div class="theme-grid-bg"></div>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+    <div class="cursor-glow"></div>
 
     <!-- Navbar -->
     <nav class="navbar">
@@ -219,6 +268,11 @@
                 <span class="tool-tag">AI Data Driven</span>
                 <span class="tool-tag">Adobe Photoshop</span>
                 <span class="tool-tag">Adobe Illustrator</span>
+                <span class="tool-tag">Adobe Premiere Pro</span>
+                <span class="tool-tag">Adobe After Effects</span>
+                <span class="tool-tag">Capture One Pro</span>
+                <span class="tool-tag">Canva</span>
+                <span class="tool-tag">CapCut</span>
                 <span class="tool-tag">WordPress / Shopify</span>
             </div>
         </div>
@@ -454,6 +508,19 @@
                 </div>
             </div>
 
+            <div class="award-card" style="margin-top: 3rem;">
+                <div class="award-image" style="display: flex; align-items: center; justify-content: center; background: #1a1a1a; min-height: 250px;">
+                    <i class="fa-solid fa-chart-line" style="font-size: 6rem; color: #3b82f6;"></i>
+                </div>
+                <div class="award-content">
+                    <div class="award-badge" style="color: #3b82f6; border-color: rgba(59,130,246,0.3); background: rgba(59,130,246,0.1);"><i class="fa-solid fa-bullseye"></i> Digital Marketing</div>
+                    <h3>Digital Marketing Projects</h3>
+                    <h4>Campaigns & Strategy Files</h4>
+                    <p>Dive into my digital marketing portfolio, featuring comprehensive ad campaign setups, SEO strategies, analytics reports, and targeted marketing project files.</p>
+                    <a href="https://drive.google.com/drive/folders/11f0kotFidOYfy_ytueyc8eNu1OIPNXr0" target="_blank" rel="noopener noreferrer" class="btn btn-primary mt-4"><i class="fa-brands fa-google-drive"></i> View Digital Marketing Files</a>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -481,6 +548,7 @@
 
                     <div class="social-links">
                         <a href="https://wa.link/3gac5u" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://www.linkedin.com/in/mdishakrahman" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                         <a href="https://www.facebook.com/mdishakrahman" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
                         <a href="https://www.instagram.com/mdishakrahmanmd" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                         <a href="https://www.pinterest.com/mdishakrahman" target="_blank" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
@@ -505,10 +573,10 @@
                 </div>
 
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2026 SHAHADAT HOSEN. All rights reserved.</p>
-            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 SHAHADAT HOSEN. All rights reserved.</p>
         </div>
     </footer>
 

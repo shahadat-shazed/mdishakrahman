@@ -955,10 +955,12 @@ section {
 
 .footer-bottom {
     text-align: center;
-    padding-top: 2rem;
+    padding: 1.5rem 0;
+    margin-top: 4rem;
     border-top: 1px solid var(--border-color);
     color: var(--text-muted);
     font-size: 0.9rem;
+    width: 100%;
 }
 
 /* Animations */
@@ -1053,4 +1055,68 @@ section {
     .hero-actions {
         flex-direction: column;
     }
+}
+
+/* --- PREMIUM GRADIENT BACKGROUND --- */
+body {
+    background: radial-gradient(circle at top right, #1e293b 0%, #0f172a 40%, #020617 100%) !important;
+    background-attachment: fixed !important;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* Make section backgrounds transparent to show the gradient */
+.services, .skills, .pricing, .experience, .awards, .tools-grid, .footer {
+    background: transparent !important;
+}
+
+.footer-bottom {
+    background: rgba(0,0,0,0.3) !important;
+}
+
+/* --- AMBIENT GRADIENT ORBS --- */
+.bg-orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(100px);
+    z-index: -1;
+    pointer-events: none;
+}
+.orb-1 {
+    top: -10%;
+    left: -10%;
+    width: 50vw;
+    height: 50vw;
+    background: radial-gradient(circle, rgba(20, 184, 166, 0.15), transparent 70%);
+}
+.orb-2 {
+    bottom: -10%;
+    right: -10%;
+    width: 60vw;
+    height: 60vw;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.15), transparent 70%);
+}
+.orb-3 {
+    top: 40%;
+    left: 30%;
+    width: 40vw;
+    height: 40vw;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.12), transparent 70%);
+    animation: floatOrb 15s infinite alternate ease-in-out;
+}
+@keyframes floatOrb {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(100px, -50px) scale(1.1); }
 }
